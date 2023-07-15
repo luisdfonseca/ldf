@@ -1,9 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to CodingX</title>
-</head>
-<body>
-    <h1>Welcome to CodingX</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <div class="rainbow-gradient-circle"></div>
+        <div class="rainbow-gradient-circle theme-pink"></div>
+    </div>
+    <!-- End Theme Style  -->
+
+    {% include 'slider.html' %}
+
+    {% include 'about.html' %}
+
+    {% include 'brand.html' %}
+
+    {% include 'portfolio.html' %}
+
+    {% include 'separator.html' %}
+
+    {% include 'skills.html' %}
+
+    {% include 'separator.html' %}
+
+    {% include 'testimonials.html' %}
+
+    {% include 'separator.html' %}
+
+    {% include 'blog.html' %}
+
+{% endblock %}
