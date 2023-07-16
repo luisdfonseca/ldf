@@ -30,3 +30,21 @@ gunicorn app:app
 export FLASK_APP=app.py
 flask run
 ```
+
+
+
+## Index
+
+```
+    {% include 'portfolio.html' %}
+
+    {% include 'separator.html' %}
+
+    {% include 'skills.html' %}
+
+    {% include 'separator.html' %}
+
+    {% include 'testimonials.html' %}
+
+    {% include 'separator.html' %}
+```
