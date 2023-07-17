@@ -1,68 +1,39 @@
-    <!-- Start Blog Area  -->
-    <div class="blog-area rainbow-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
-                        <h4 class="subtitle "><span class="theme-gradient">Latests News</span></h4>
-                        <h2 class="title w-600 mb--20">Read from the Blog.</h2>
-                        <p class="description b1">We provide company and finance service for <br> startups and
-                            company business.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row row--15">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700">
-                    <div class="rainbow-card box-card-style-default">
-                        <div class="inner">
-                            <div class="thumbnail"><a class="image" href="blog-details.html"><img src="../static/images/blog/blog-01.jpg" alt="Blog Image"></a></div>
-                            <div class="content">
-                                <ul class="rainbow-meta-list">
-                                    <li><a href="#">Irin Pervin</a></li>
-                                    <li class="separator">/</li>
-                                    <li>10 Dec 2021</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">Best Corporate Tips You Will Read This
-                                        Year.</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
-                    <div class="rainbow-card box-card-style-default">
-                        <div class="inner">
-                            <div class="thumbnail"><a class="image" href="blog-details.html"><img src="../static/images/blog/blog-02.jpg" alt="Blog Image"></a></div>
-                            <div class="content">
-                                <ul class="rainbow-meta-list">
-                                    <li><a href="#">Fatima Asrafy</a></li>
-                                    <li class="separator">/</li>
-                                    <li>30 Nov 2021</li>
-                                </ul>
-                                <h4 class="title"><a href="/blog-details/2">Should Fixing Corporate Take 100
-                                        Steps.</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700" data-sal-delay="200">
-                    <div class="rainbow-card box-card-style-default">
-                        <div class="inner">
-                            <div class="thumbnail"><a class="image" href="blog-details.html"><img src="../static/images/blog/blog-03.jpg" alt="Blog Image"></a></div>
-                            <div class="content">
-                                <ul class="rainbow-meta-list">
-                                    <li><a href="#">John Dou</a></li>
-                                    <li class="separator">/</li>
-                                    <li>12 Oct 2021</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">The Next 100 Things To Immediately Do
-                                        About.</a></h4>
-                            </div>
-                        </div>
-                    </div>
+<!-- Start Blog Area  -->
+<div class="blog-area rainbow-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
+                    <h4 class="subtitle "><span class="theme-gradient">Latests News</span></h4>
+                    <h2 class="title w-600 mb--20">Read from the Blog.</h2>
+                    <p class="description b1">We provide company and finance service for <br> startups and
+                        company business.</p>
                 </div>
             </div>
         </div>
+        <div class="row row--15">
+           {% for post in posts %}
+            {% if post['feature_image'] %}
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700">
+                <div class="rainbow-card box-card-style-default">
+                    <div class="inner">
+                        <div class="thumbnail"><a class="image" href="blog-details.html"><img src="{{ post['feature_image']}}" alt="Blog Image"></a></div>
+                        <div class="content">
+                            <ul class="rainbow-meta-list">
+                                <li><span class="theme-gradient" style="margin-right:5px;">{{ post['primary_tag']['name']}}</span></li>
+                                <li>{{ post['reading_time']}} min read</li>
+                                <!-- <li class="separator">/</li> -->
+                                <!-- <li>10 Dec 2021</li> -->
+                            </ul>
+                            <h4 class="title"><a href="{{ post['url'] }}" target="_blank">{{ post['title'] }}</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    <!-- End Blog Area  -->
+</div>
+<!-- End Blog Area  -->

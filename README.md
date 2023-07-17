@@ -10,9 +10,9 @@
 #install python
 pyenv install 3.11.4
 
-# clone repo
-git clone ../proofreadgpt.git
-cd proofreadgpt
+git clong ldf.git
+
+cd ldf
 
 # setup python env
 python -m venv venv
@@ -22,6 +22,8 @@ source venv/bin/activate
 
 # Install requirements
 pip install -r requirements.txt
+
+export GHOST_API_KEY=''
 
 # using gunicorn PORT:8000
 gunicorn app:app
