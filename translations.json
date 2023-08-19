@@ -1,6 +1,9 @@
 {
     "en": {
         "home-slider": "Hey! I'm <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "blog-section-label":"The Blog",
+        "blog-section-title":"Explore Your Curiosity",
+        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, business, and continuous growth.",
         "project-section-label":"Projects",
         "project-section-title":"Start here: Tools and Resources to Elevate Yourself",
         "projects": [
@@ -30,6 +33,9 @@
     },
     "es": {
         "home-slider": "¡Hola! Soy <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "blog-section-label":"El Blog",
+        "blog-section-title":"Explora Tu Curiosidad",
+        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, negocios y crecimiento continuo.",
         "project-section-label":"Proyectos",
         "project-section-title":"Empieza aquí: Herramientas y Recursos para Elevar tu Potencial",
         "projects": [
@@ -50,7 +56,7 @@
                 {
                     "name":"Mi Blog",
                     "tag":"tecnología, negocios y crecimiento continuo",
-                    "description":"Compartiendo perspectivas y guías completas sobre tecnología, negocios y crecimiento continuo.",
+                    "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, negocios y crecimiento continuo.",
                     "img":"../static/images/portfolio/blog-cover.png",
                     "url":"https://ldf.blog/"
                 }
