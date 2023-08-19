@@ -54,7 +54,31 @@
     <script src="{{ url_for('static', filename='js/vendor/jquery.style.swicher.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/js.cookie.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/jquery-one-page-nav.js') }}"></script>
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('.blog-search').submit(function(event) {
+            event.preventDefault(); // Stop the form from submitting the usual way
+
+            let form = $(this);
+            $.ajax({
+                type: 'POST',
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function(data) {
+                    // This function will be called when the server sends a successful response
+                    $('#message').text(data.message).css('color', 'green');
+                },
+                error: function(data) {
+                    // This function will be called when the server sends an error response
+                    let message = (data.responseJSON && data.responseJSON.message) || 'An error occurred';
+                    $('#message').text(message).css('color', 'red');
+                }
+            });
+        });
+    });
+    </script>
 
 </body>
 

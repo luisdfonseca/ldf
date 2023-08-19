@@ -1,6 +1,11 @@
 {
     "en": {
         "home-slider": "Hey! I'm <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "email-input-message":"Your Email",
+        "signup-message": "Stay Ahead: Weekly Insights and Guides on Tech, Business, and Growth.",
+        "signup-success-message": "You were subscribed successfully.",
+        "signup-failure-message": "Subscription failed.",
+        "slider-btn":"Resources",
         "blog-section-label":"The Blog",
         "blog-section-title":"Explore Your Curiosity",
         "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, business, and continuous growth.",
@@ -33,6 +38,11 @@
     },
     "es": {
         "home-slider": "¡Hola! Soy <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "email-input-message":"Tu Email",
+        "signup-message": "Mantente Actualizado: Artículos Semanales y Guías sobre Tecnología, Negocios y Crecimiento Personal.",
+        "signup-success-message": "Te has suscrito exitosamente.",
+        "signup-failure-message": "La suscripción falló.",
+        "slider-btn":"Recursos",
         "blog-section-label":"El Blog",
         "blog-section-title":"Explora Tu Curiosidad",
         "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, negocios y crecimiento continuo.",

@@ -7,7 +7,23 @@
                     <h1 class="title">
                         {{ g.translations['home-slider']|safe if 'home-slider' in g.translations else 'Welcome to my site' }}
                     </h1>
-                    <div class="button-group mt--30"><a class="btn-default round btn-border btn-large" href="personal-portfolio.html">Contact Me</a></div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-sm-12 col-md-4 col-">
+                            <form action="/subscribe"  method="post" class="blog-search">
+                                <input name="email" type="email" placeholder="{{ g.translations['email-input-message'] }}" >
+                                <input name="phone" type="text" style="display:none;" autocomplete="off">
+                                <input name="name" type="text" style="display:none;" autocomplete="off">
+                                <input type="hidden" name="language" value="{{ g.language }}">
+                                <button class="search-button">
+                                    <i class="feather-mail"></i>
+                                </button>
+                            </form>
+                            <div id="message"></div>
+                            <span>{{ g.translations['signup-message'] }}</span>
+                        </div>
+                    </div>
+                    <div class="button-group mt--30"><a class="btn-default round btn-border" href="#projects">{{ g.translations['slider-btn'] }}</a></div>
                 </div>
             </div>
         </div>
