@@ -1,8 +1,60 @@
 {
     "en": {
-        "home-slider": "Hey! I'm <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>"
+        "home-slider": "Hey! I'm <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "project-section-label":"Projects",
+        "project-section-title":"Start here: Tools and Resources to Elevate Yourself",
+        "projects": [
+                {
+                    "name":"Pulpodcast",
+                    "tag":"Professional Development",
+                    "description":"A virtual coffee break in Spanish, hosted by professionals from leading companies like Apple, Intel, and P&G. Tune in to explore current trends and boost your professional development. Let's grow together!",
+                    "img":"../static/images/portfolio/pulpo-logo.png",
+                    "url":"https://pulpodcast.transistor.fm/"
+                },
+                {
+                    "name":"Pulpo Mentorship Program",
+                    "tag":"Professional Development",
+                    "description":"Connect with mentors from leading companies like Apple, Intel and P&G, and receive personalized guidance to boost your professional development.",
+                    "img":"../static/images/portfolio/pulpo-logo.png",
+                    "url":"https://tally.so/r/mRMzVJ"
+                },
+                {
+                    "name":"My Blog",
+                    "tag":"tech, business, and continuous growtht",
+                    "description":"Sharing insights and comprehensive how-to guides around tech, business, and continuous growth.",
+                    "img":"../static/images/portfolio/blog-cover.png",
+                    "url":"https://ldf.blog/"
+                }
+
+        ]
     },
     "es": {
-        "home-slider": "¡Hola! Soy <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>"
+        "home-slider": "¡Hola! Soy <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "project-section-label":"Proyectos",
+        "project-section-title":"Empieza aquí: Herramientas y Recursos para Elevar tu Potencial",
+        "projects": [
+                {
+                    "name":"Pulpodcast",
+                    "tag":"Desarrollo Profesional",
+                    "description":"Un café virtual, presentado por profesionales de empresas líderes como Apple, Intel y P&G. Sintoniza para explorar las tendencias actuales y potenciar tu desarrollo profesional. ¡Crezcamos juntos!",
+                    "img":"../static/images/portfolio/pulpo-logo.png",
+                    "url":"https://pulpodcast.transistor.fm/"
+                },
+                {
+                    "name":"Programa de Mentoria de Pulpo",
+                    "tag":"Desarrollo Profesional",
+                    "description":"Conecta con mentores de empresas líderes como Apple, Intel y P&G, y recibe orientación personalizada para potenciar tu desarrollo profesional.",
+                    "img":"../static/images/portfolio/pulpo-logo.png",
+                    "url":"https://tally.so/r/mRMzVJ"
+                },
+                {
+                    "name":"Mi Blog",
+                    "tag":"tecnología, negocios y crecimiento continuo",
+                    "description":"Compartiendo perspectivas y guías completas sobre tecnología, negocios y crecimiento continuo.",
+                    "img":"../static/images/portfolio/blog-cover.png",
+                    "url":"https://ldf.blog/"
+                }
+
+        ]
     }
 }
