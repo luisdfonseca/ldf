@@ -7,19 +7,30 @@ app= Flask(__name__)
 GHOST_API_KEY = os.getenv('GHOST_API_KEY','')
 GHOST_ADMIN_API_KEY = os.getenv('GHOST_ADMIN_API_KEY','')
 
+GHOST_API_KEY_ES = os.getenv('GHOST_API_KEY_ES','')
+GHOST_ADMIN_API_KEY_ES = os.getenv('GHOST_ADMIN_API_KEY_ES','')
+
 URL = "https://luis-daniel-fonseca.ghost.io/"
+URL_ES = "https://luis-daniel-fonseca-2.ghost.io/"
 
 # # Load translations
 with open('translations.json') as json_file:
     translations = json.load(json_file)
 
-def get_posts():
+def get_posts(language):
   headers = {
       "Accept-Version": "v5.0",
   }
 
-  response = requests.get("https://luis-daniel-fonseca.ghost.io/ghost/api/content/posts/",
-              headers=headers, params={'key': GHOST_API_KEY, 'limit': '10','include':'tags'})
+  url = URL
+  key = GHOST_API_KEY
+
+  if language == 'es':
+    url = URL_ES
+    key = GHOST_API_KEY_ES
+
+  response = requests.get("%sghost/api/content/posts/" % url,
+              headers=headers, params={'key': key, 'limit': '10','include':'tags'})
 
   # To print the response text
   # print(response.text)
@@ -46,7 +57,7 @@ def index(language):
   #       abort(404)
 
   if GHOST_API_KEY:
-    posts = get_posts()
+    posts = get_posts(language)
 
   return render_template('index.html', posts=posts)
 
@@ -56,8 +67,6 @@ def index(language):
 def favicon(path):
     return send_from_directory(os.path.join(app.root_path, 'static/images'),
                                'favicon.png', mimetype='image/png')
-
-
 
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
@@ -69,12 +78,18 @@ def subscribe():
         # This submission is likely a spam bot
         return "Thanks", 200
 
+    site_url = URL
+    admin_key = GHOST_ADMIN_API_KEY
+
+    if language == 'es':
+      site_url = URL_ES
+      admin_key = GHOST_ADMIN_API_KEY_ES
 
     # Get email from form
     email = request.form['email']
 
     # Split the key into ID and SECRET
-    id, secret = GHOST_ADMIN_API_KEY.split(':')
+    id, secret = admin_key.split(':')
     print(id)
     print(secret)
     print(email)
@@ -93,7 +108,7 @@ def subscribe():
     token = jwt.encode(payload, bytes.fromhex(secret), algorithm='HS256', headers=header)
 
     # Make an authenticated request to create a post
-    url = '%s/ghost/api/admin/members/' % URL
+    url = '%s/ghost/api/admin/members/' % site_url
     print(url)
     headers = {'Authorization': 'Ghost {}'.format(token)}
     body = {"members": [{"email": email}]}
