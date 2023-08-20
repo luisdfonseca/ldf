@@ -5,15 +5,37 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="row row--0 about-wrapper align-items-center theme-shape">
                         <div class="col-lg-6">
-                            <div class="thumbnail"><img src="../static/images/about/about-5.png" alt="About Images">
+                            <div class="thumbnail"><img src="../static/images/about/about-ldf-3.png" alt="About Images">
                             </div>
                         </div>
                         <div class="col-lg-6 mt_md--30 mt_sm--30">
                             <div class="content">
                                 <div class="inner">
-                                    <h4 class="title" id="about">I'm Web Dedeloper</h4>
-                                    <p>Web designer and developer working for envato.com in Paris, France.</p>
-                                    <ul class="contact-address">
+                                    <h4 class="title" id="about">{{ g.translations['about-title'] }}</h4>
+                                    {% for msg in g.translations['about-description'] %}
+                                        <p>{{msg}}</p>
+                                    {% endfor %}
+
+                                    <ul class="social-icon social-default with-gradient">
+                                        <!-- <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="200"><a href="https://www.facebook.com/">
+                                                <i class="feather-facebook"></i>
+                                            </a>
+                                        </li> -->
+                                        <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="400"><a href="https://www.instagram.com/luisdanielfonseca/">
+                                                <i class="feather-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="300"><a href="https://twitter.com/luisdfonseca_">
+                                                <i class="feather-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="500"><a href="https://www.linkedin.com/in/luis-daniel-fonseca/">
+                                                <i class="feather-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- <ul class="contact-address">
                                         <li>
                                             <i class="feather-file"></i> Web designer &amp; developer
                                         </li>
@@ -21,8 +43,8 @@
                                         <li>
                                             <i class="feather-map-pin"></i> Dhaka, Bangladesh
                                         </li>
-                                    </ul>
-                                    <div class="download-button mt--20"><a class="btn-read-more" href="#"><span>Download My CV</span></a></div>
+                                    </ul> -->
+                                    <!-- <div class="download-button mt--20"><a class="btn-read-more" href="#"><span>Download My CV</span></a></div> -->
                                 </div>
                             </div>
                         </div>

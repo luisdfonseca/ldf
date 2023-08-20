@@ -11,6 +11,12 @@
         "signup-success-message": "You were subscribed successfully.",
         "signup-failure-message": "Subscription failed.",
         "slider-btn":"Resources",
+        "about-title":"I'm an Engineer, Maker, and Writer",
+        "about-description":[
+            "Software Engineer at Intel.",
+            "I share everything I learn about tech, business and continuous growth on my Blog and Social Media.",
+            "My mission is to create tools and resources that not only enhance professional skills but also foster personal growth."
+        ],
         "blog-section-label":"The Blog",
         "blog-section-title":"Explore Your Curiosity",
         "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, business, and continuous growth.",
@@ -53,6 +59,12 @@
         "signup-success-message": "Te has suscrito exitosamente.",
         "signup-failure-message": "La suscripción falló.",
         "slider-btn":"Recursos",
+        "about-title": "Soy Ingeniero, Creador y Escritor",
+        "about-description": [
+            "Ingeniero de Software en Intel.",
+            "Comparto todo lo que aprendo sobre tecnología, negocios y crecimiento continuo en mi Blog y en Redes Sociales.",
+            "Mi misión es crear herramientas y recursos que no solo mejoren las habilidades profesionales, sino que también fomenten el crecimiento personal."
+        ],
         "blog-section-label":"El Blog",
         "blog-section-title":"Explora Tu Curiosidad",
         "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, negocios y crecimiento continuo.",
