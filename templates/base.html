@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ g.language }}">
 
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/lightbox.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-629HN5HCR4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-629HN5HCR4');
+    </script>
+
 </head>
 <body>
     <main class="page-wrapper">
