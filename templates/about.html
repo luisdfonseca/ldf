@@ -3,17 +3,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <div class="row row--0 about-wrapper align-items-center theme-shape">
-                        <div class="col-lg-6">
+                    <div class="row row--0 about-wrapper theme-shape">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="thumbnail"><img src="../static/images/about/about-ldf-3.png" alt="About Images">
                             </div>
                         </div>
                         <div class="col-lg-6 mt_md--30 mt_sm--30">
                             <div class="content">
-                                <div class="inner">
+                                <div class="inner" style="padding: 0 15px;">
                                     <h4 class="title" id="about">{{ g.translations['about-title'] }}</h4>
                                     {% for msg in g.translations['about-description'] %}
-                                        <p>{{msg}}</p>
+                                        <p style="font-size: 15px; width: 100%">{{msg}}</p>
                                     {% endfor %}
 
                                     <ul class="social-icon social-default with-gradient">
