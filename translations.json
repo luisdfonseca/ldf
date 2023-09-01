@@ -32,7 +32,7 @@
                     "name":"Pulpodcast",
                     "tag":"Professional Development",
                     "description":"A virtual coffee break in Spanish, hosted by professionals from leading companies like Apple, Intel, and P&G. Tune in to explore current trends and boost your professional development. Let's grow together!",
-                    "img":"../static/images/portfolio/pulpo-logo.png",
+                    "img":"../static/images/portfolio/pulpodcast.png",
                     "url":"https://pulpodcast.transistor.fm/"
                 },
                 {
@@ -85,7 +85,7 @@
                     "name":"Pulpodcast",
                     "tag":"Desarrollo Profesional",
                     "description":"Un café virtual, presentado por profesionales de empresas líderes como Apple, Intel y P&G. Sintoniza para explorar las tendencias actuales y potenciar tu desarrollo profesional. ¡Crezcamos juntos!",
-                    "img":"../static/images/portfolio/pulpo-logo.png",
+                    "img":"../static/images/portfolio/pulpodcast.png",
                     "url":"https://pulpodcast.transistor.fm/"
                 },
                 {
