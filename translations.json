@@ -7,7 +7,7 @@
         "nav-language-url":"/es/",
         "home-slider": "Hey! I'm <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
         "email-input-message":"Your Email",
-        "signup-message": "Stay Ahead: Weekly Insights and Guides on Tech, Business, and Growth.",
+        "signup-message": "Stay Ahead: Weekly Insights and Guides on Tech, Programming, and Career Growth.",
         "signup-success-message": "You were subscribed successfully.",
         "signup-failure-message": "Subscription failed.",
         "slider-btn":"Resources",
@@ -24,7 +24,7 @@
         ],
         "blog-section-label":"The Blog",
         "blog-section-title":"Explore Your Curiosity",
-        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, business, and continuous growth.",
+        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, programming, and professional growth.",
         "project-section-label":"Resources",
         "project-section-title":"Start here: Tools and Resources to Elevate Yourself",
         "projects": [
@@ -36,16 +36,9 @@
                     "url":"https://pulpodcast.transistor.fm/"
                 },
                 {
-                    "name":"Pulpo Mentorship Program",
-                    "tag":"Professional Development",
-                    "description":"Connect with mentors from leading companies like Apple, Intel and P&G, and receive personalized guidance to boost your professional development.",
-                    "img":"../static/images/portfolio/pulpo-logo.png",
-                    "url":"https://tally.so/r/mRMzVJ"
-                },
-                {
                     "name":"My Blog",
-                    "tag":"tech, business, and continuous growtht",
-                    "description":"Sharing insights and comprehensive how-to guides around tech, business, and continuous growth.",
+                    "tag":"tech, programming, and continuous growtht",
+                    "description":"Sharing insights and comprehensive how-to guides around tech, programming, and career growth.",
                     "img":"../static/images/portfolio/blog-cover.png",
                     "url":"https://ldf.blog/"
                 }
@@ -60,7 +53,7 @@
         "nav-language-url":"/",
         "home-slider": "¡Hola! Soy <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
         "email-input-message":"Tu Email",
-        "signup-message": "Mantente Actualizado: Artículos Semanales y Guías sobre Tecnología, Negocios y Crecimiento Personal.",
+        "signup-message": "Mantente Actualizado: Artículos Semanales y Guías sobre Tecnología, Programación y Crecimiento Profesional.",
         "signup-success-message": "Te has suscrito exitosamente.",
         "signup-failure-message": "La suscripción falló.",
         "slider-btn":"Recursos",
@@ -77,7 +70,7 @@
         ],
         "blog-section-label":"El Blog",
         "blog-section-title":"Explora Tu Curiosidad",
-        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, negocios y crecimiento continuo.",
+        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
         "project-section-label":"Recursos",
         "project-section-title":"Empieza aquí: Herramientas y Recursos para Elevar tu Potencial",
         "projects": [
@@ -89,16 +82,9 @@
                     "url":"https://pulpodcast.transistor.fm/"
                 },
                 {
-                    "name":"Programa de Mentoria de Pulpo",
-                    "tag":"Desarrollo Profesional",
-                    "description":"Conecta con mentores de empresas líderes como Apple, Intel y P&G, y recibe orientación personalizada para potenciar tu desarrollo profesional.",
-                    "img":"../static/images/portfolio/pulpo-logo.png",
-                    "url":"https://tally.so/r/mRMzVJ"
-                },
-                {
                     "name":"Mi Blog",
-                    "tag":"tecnología, negocios y crecimiento continuo",
-                    "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, negocios y crecimiento continuo.",
+                    "tag":"tecnología, programación y crecimiento profesional",
+                    "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
                     "img":"../static/images/portfolio/blog-cover.png",
                     "url":"https://es.ldf.blog/"
                 }
