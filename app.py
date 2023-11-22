@@ -61,6 +61,10 @@ def index(language):
 
   return render_template('index.html', posts=posts)
 
+@app.route("/en/lan", methods=['GET'])
+def lan():
+    return render_template('lan.html')
+
 
 @app.route("/favicon.ico", defaults={'path': ''})
 @app.route("/favicon.ico/<path:path>")
@@ -127,3 +131,45 @@ def subscribe():
       return jsonify({'status': 'success', 'message': success_msg}), 200
     else:
       return jsonify({'status': 'error', 'message': error_msg}), 400
+
+# @app.route('/change_subscription_lang')
+# def change_subscription_lang():
+#   email = request.args.get('email','')
+
+#   site_url = URL
+#   admin_key = GHOST_ADMIN_API_KEY
+
+#   # if language == 'es':
+#   #   site_url = URL_ES
+#   #   admin_key = GHOST_ADMIN_API_KEY_ES
+
+#   # Split the key into ID and SECRET
+#   id, secret = admin_key.split(':')
+#   print(id)
+#   print(secret)
+#   print(email)
+
+#   # Prepare header and payload
+#   iat = int(date.now().timestamp())
+
+#   header = {'alg': 'HS256', 'typ': 'JWT', 'kid': id}
+#   payload = {
+#       'iat': iat,
+#       'exp': iat + 5 * 60,
+#       'aud': '/admin/'
+#   }
+
+#   # Create the token (including decoding secret)
+#   token = jwt.encode(payload, bytes.fromhex(secret), algorithm='HS256', headers=header)
+
+#   url = '%s/ghost/api/admin/members/' % site_url
+
+#   headers = {'Authorization': 'Ghost {}'.format(token)}
+
+#   r = requests.get(url, headers=headers)
+
+#   return(r.json())
+
+
+
+

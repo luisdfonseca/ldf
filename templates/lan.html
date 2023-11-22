@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
+
+    <title>Luis Daniel Fonseca</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <!-- <link rel="icon" href="#"> -->
+    <!-- CSS ============================================ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-629HN5HCR4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-629HN5HCR4');
+    </script>
+
+</head>
+<body>
+    <div>
+        <div class="rainbow-gradient-circle"></div>
+        <div class="rainbow-gradient-circle theme-pink"></div>
+    </div>
+
+    <!-- Start Slider Area  -->
+    <div class="slider-perosonal-portfolio height-750 slider-bg-image" data-black-overlay="1">
+        <div class="container">
+            <div class="row row--30 align-items-center">
+                <div class="col-12">
+                    <div class="inner text-center">
+                        <h1 class="title">
+                            <span class='theme-gradient'>Luis Daniel Fonseca</span>
+                        </h1>
+                        <h3>tech, programming, career</h3>
+                        <div class="button-group mt--30">
+                            <a class="btn-default round btn-border" href="/">English</a>
+                            <a class="btn-default round btn-border" href="/es">Español</a>
+                            <h5 id="lan-header">Choose language</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slider Area  -->
+
+
+    <script>
+        var i = 0;
+
+        function change() {
+          var doc = document.getElementById("lan-header");
+          var text = [["Choose language"], ["Escoge idioma"]];
+          doc.textContent = text[i][0];
+            i = (i + 1) % text.length;
+        }
+    setInterval(change, 2000);
+    </script>
+    
+</body>
+</html>
