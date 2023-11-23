@@ -56,9 +56,8 @@ def index(language):
   # if language not in ['en', 'es']:
   #       abort(404)
 
-  if GHOST_API_KEY:
-    posts = get_posts(language)
-
+  posts = get_posts(language)
+  
   return render_template('index.html', posts=posts)
 
 @app.route("/en/lan", methods=['GET'])
@@ -91,12 +90,17 @@ def subscribe():
 
     # Get email from form
     email = request.form['email']
+    ip_address = request.remote_addr
+
+    geolocation_data = get_geolocation(ip_address)
+    print(ip_address)
+    print(geolocation_data)
 
     # Split the key into ID and SECRET
     id, secret = admin_key.split(':')
     print(id)
-    print(secret)
-    print(email)
+    # print(secret)
+    # print(email)
 
     # Prepare header and payload
     iat = int(date.now().timestamp())
@@ -115,7 +119,7 @@ def subscribe():
     url = '%s/ghost/api/admin/members/' % site_url
     print(url)
     headers = {'Authorization': 'Ghost {}'.format(token)}
-    body = {"members": [{"email": email}]}
+    body = {"members": [{"email": email, 'geolocation': geolocation_data}]}
 
     r = requests.post(url, json=body, headers=headers)
 
@@ -132,43 +136,48 @@ def subscribe():
     else:
       return jsonify({'status': 'error', 'message': error_msg}), 400
 
-# @app.route('/change_subscription_lang')
-# def change_subscription_lang():
-#   email = request.args.get('email','')
 
-#   site_url = URL
-#   admin_key = GHOST_ADMIN_API_KEY
+def get_geolocation(ip_address):
+    response = requests.get(f'http://ip-api.com/json/{ip_address}')
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return {}
 
-#   # if language == 'es':
-#   #   site_url = URL_ES
-#   #   admin_key = GHOST_ADMIN_API_KEY_ES
 
-#   # Split the key into ID and SECRET
-#   id, secret = admin_key.split(':')
-#   print(id)
-#   print(secret)
-#   print(email)
+def get_ghost_members():
+  site_url = URL
+  admin_key = GHOST_ADMIN_API_KEY
 
-#   # Prepare header and payload
-#   iat = int(date.now().timestamp())
+  # if language == 'es':
+  #   site_url = URL_ES
+  #   admin_key = GHOST_ADMIN_API_KEY_ES
 
-#   header = {'alg': 'HS256', 'typ': 'JWT', 'kid': id}
-#   payload = {
-#       'iat': iat,
-#       'exp': iat + 5 * 60,
-#       'aud': '/admin/'
-#   }
+  # Split the key into ID and SECRET
+  id, secret = admin_key.split(':')
+  # print(id)
+  # print(secret)
 
-#   # Create the token (including decoding secret)
-#   token = jwt.encode(payload, bytes.fromhex(secret), algorithm='HS256', headers=header)
+  # Prepare header and payload
+  iat = int(date.now().timestamp())
 
-#   url = '%s/ghost/api/admin/members/' % site_url
+  header = {'alg': 'HS256', 'typ': 'JWT', 'kid': id}
+  payload = {
+      'iat': iat,
+      'exp': iat + 5 * 60,
+      'aud': '/admin/'
+  }
 
-#   headers = {'Authorization': 'Ghost {}'.format(token)}
+  # Create the token (including decoding secret)
+  token = jwt.encode(payload, bytes.fromhex(secret), algorithm='HS256', headers=header)
 
-#   r = requests.get(url, headers=headers)
+  url = '%s/ghost/api/admin/members/' % site_url
 
-#   return(r.json())
+  headers = {'Authorization': 'Ghost {}'.format(token)}
+
+  r = requests.get(url, headers=headers)
+
+  return(r.json())
 
 
 
