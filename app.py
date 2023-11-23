@@ -124,7 +124,7 @@ def subscribe():
     url = '%s/ghost/api/admin/members/' % site_url
     print(url)
     headers = {'Authorization': 'Ghost {}'.format(token)}
-    body = {"members": [{"email": email, 'note': geolocation_data}]}
+    body = {"members": [{"email": email, 'note': str(geolocation_data)}]}
 
     r = requests.post(url, json=body, headers=headers)
 
