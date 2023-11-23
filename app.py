@@ -96,7 +96,28 @@ def subscribe():
     else:
       ip_address = request.remote_addr
 
-    geolocation_data = get_geolocation(ip_address)
+    geo_data = get_geolocation(ip_address)
+    geolocation_data = {}
+
+    if geo_data:
+      geolocation_data = {
+        "country_code": geo_data["countryCode"],
+        "country_code3":"NA",
+        "continent_code":"NA",
+        "region": geo_data["regionName"],
+        "ip": ip_address,
+        "longitude": geo_data["lon"],
+        "accuracy": 0,
+        "latitude": geo_data["lan"],
+        "timezone": geo_data["timezone"],
+        "city": geo_data["city"],
+        "organization": geo_data["org"],
+        "asn": geo_data["as"],
+        "country": geo_data["country"],
+        "area_code":"NA",
+        "organization_name": geo_data["org"]
+      }
+
     print(ip_address)
     print(geolocation_data)
 
