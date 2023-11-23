@@ -57,7 +57,7 @@ def index(language):
   #       abort(404)
 
   posts = get_posts(language)
-  
+
   return render_template('index.html', posts=posts)
 
 @app.route("/en/lan", methods=['GET'])
@@ -90,7 +90,11 @@ def subscribe():
 
     # Get email from form
     email = request.form['email']
-    ip_address = request.remote_addr
+
+    if 'X-Forwarded-For' in request.headers:
+      ip_address = request.headers['X-Forwarded-For']
+    else:
+      ip_address = request.remote_addr
 
     geolocation_data = get_geolocation(ip_address)
     print(ip_address)
