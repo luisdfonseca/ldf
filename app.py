@@ -99,6 +99,8 @@ def subscribe():
     geo_data = get_geolocation(ip_address)
     geolocation_data = {}
 
+    print(geo_data)
+
     if geo_data:
       geolocation_data = {
         "country_code": geo_data["countryCode"],
@@ -108,7 +110,7 @@ def subscribe():
         "ip": ip_address,
         "longitude": geo_data["lon"],
         "accuracy": 0,
-        "latitude": geo_data["lan"],
+        "latitude": geo_data["lat"],
         "timezone": geo_data["timezone"],
         "city": geo_data["city"],
         "organization": geo_data["org"],
