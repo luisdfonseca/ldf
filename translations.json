@@ -25,7 +25,7 @@
         "blog-section-title":"Explore Your Curiosity",
         "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, programming, and professional growth.",
         "project-section-label":"Resources",
-        "project-section-title":"Start here: Tools and Resources to Elevate Yourself",
+        "project-section-title":"Start here: Tools and Resources",
         "projects": [
                 {
                     "name":"Pulpodcast",
@@ -70,7 +70,7 @@
         "blog-section-title":"Explora Tu Curiosidad",
         "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
         "project-section-label":"Recursos",
-        "project-section-title":"Empieza aquí: Herramientas y Recursos para Elevar tu Potencial",
+        "project-section-title":"Empieza aquí: Herramientas y Recursos",
         "projects": [
                 {
                     "name":"Pulpodcast",

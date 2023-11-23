@@ -10,7 +10,8 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-sm-12 col-md-4 col-">
-                            <form action="/subscribe"  method="post" class="blog-search">
+                            <span style="font-size:16px; color:white;">{{ g.translations['signup-message'] }}</span>
+                            <form action="/subscribe"  method="post" class="blog-search" style="margin-top:20px;">
                                 <input name="email" type="email" placeholder="{{ g.translations['email-input-message'] }}" >
                                 <input name="phone" type="text" style="display:none;" autocomplete="off">
                                 <input name="name" type="text" style="display:none;" autocomplete="off">
@@ -20,10 +21,9 @@
                                 </button>
                             </form>
                             <div id="message"></div>
-                            <span style="font-size:12px;">{{ g.translations['signup-message'] }}</span>
                         </div>
                     </div>
-                    <div class="button-group mt--30"><a class="btn-default round btn-border" href="#resources">{{ g.translations['slider-btn'] }}</a></div>
+                    <!-- <div class="button-group mt--30"><a class="btn-default round btn-border" href="#resources">{{ g.translations['slider-btn'] }}</a></div> -->
                 </div>
             </div>
         </div>
