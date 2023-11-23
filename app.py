@@ -126,6 +126,9 @@ def subscribe():
     headers = {'Authorization': 'Ghost {}'.format(token)}
     body = {"members": [{"email": email, 'note': str(geolocation_data)}]}
 
+    if geolocation_data:
+      body["members"][0]["labels"] = [{"name": geolocation_data["country"],"slug": geolocation_data["countryCode"]}]
+
     r = requests.post(url, json=body, headers=headers)
 
     print(r)
