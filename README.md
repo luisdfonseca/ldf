@@ -31,6 +31,7 @@ gunicorn app:app
 # using flask  PORT:5000
 export FLASK_APP=app.py
 flask run
+flask run --port 8080
 ```
 
 
