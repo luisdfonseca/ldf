@@ -13,6 +13,8 @@ GHOST_ADMIN_API_KEY_ES = os.getenv('GHOST_ADMIN_API_KEY_ES','')
 URL = "https://luis-daniel-fonseca.ghost.io/"
 URL_ES = "https://luis-daniel-fonseca-2.ghost.io/"
 
+non_language_specific_urls = ['choose-language']
+
 # # Load translations
 with open('translations.json') as json_file:
     translations = json.load(json_file)
@@ -43,7 +45,12 @@ def get_posts(language):
 
 @app.before_request
 def before_request():
-    language = 'en'  # default language
+
+  if request.path.strip('/') in non_language_specific_urls:
+          g.language = 'default'
+          g.translations = {}
+  else:
+    language = 'en'
     if request.view_args and 'language' in request.view_args:
         language = request.view_args['language']
     g.language = language
@@ -60,7 +67,7 @@ def index(language):
 
   return render_template('index.html', posts=posts)
 
-@app.route("/en/lan", methods=['GET'])
+@app.route("/choose-language", methods=['GET'])
 def lan():
     return render_template('lan.html')
 
