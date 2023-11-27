@@ -69,7 +69,17 @@ def index(language):
 
 @app.route("/choose-language", methods=['GET'])
 def lan():
-    return render_template('lan.html')
+    return render_template('landing-pages/lan.html')
+
+@app.route("/<string:language>/coding-interview-study-guide", methods=['GET'])
+def coding_questions(language):
+    return render_template('landing-pages/page-coding-questions.html')
+
+
+@app.route("/<string:language>/guia-de-estudio-para-entrevistas-de-programacion", methods=['GET'])
+def coding_questions_es(language):
+    return render_template('landing-pages/page-coding-questions.html')
+
 
 
 @app.route("/favicon.ico", defaults={'path': ''})

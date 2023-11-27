@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="{{ g.language }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
+
+    <title>Luis Daniel Fonseca</title>
+
+    <link rel="alternate" hreflang="en" href="http://luisdanielfonseca.com/en/" />
+    <link rel="alternate" hreflang="es" href="http://luisdanielfonseca.com/es/" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <!-- <link rel="icon" href="#"> -->
+    <!-- CSS ============================================ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/animation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/feature.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/magnify.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins/lightbox.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-629HN5HCR4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-629HN5HCR4');
+    </script>
+
+</head>
+
+<body>
+
+    <main class="page-wrapper">
+        <!-- Start Theme Style  -->
+        <div>
+            <div class="rainbow-gradient-circle"></div>
+            <div class="rainbow-gradient-circle theme-pink"></div>
+        </div>
+        <!-- End Theme Style  -->
+
+
+        <!-- Start Slider Area  -->
+        <div class="slider-area slider-style-1 variation-3 bg-transparent rainbow-section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner text-center">
+                            <h1 class="display-two">
+                                {% if g.language == "es" %}
+                                Completa con Éxito Tu Próxima Entrevista de Programación con Nuestra Guía Gratuita 
+                                {% else %}
+                                Excel Your Coding Interview <br> 
+                                with Our Free Study Guide
+                                {% endif%}
+                            </h1>
+                            <p class="description">
+                            {% if g.language == "es" %}
+                            Obtén 80 preguntas de programación cuidadosamente seleccionadas para sobresalir en tu próxima entrevista al suscribirte
+                            {% else %}
+                            Get 80 hand-picked programming questions to ace your next coding interview when you subscribe
+                            {% endif %}
+                            </p>
+                            <div class="call-to-btn text-center mt--30"><a class="btn-default btn-icon" href="#subscribe">
+                                {% if g.language == "es" %}
+                                Acércate a Tu Trabajo Soñado
+                                {% else %}
+                                Get Closer to Your Dream Job 
+                                {% endif %}
+                                <i class="icon feather-arrow-right"> </i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Slider Area  -->
+
+        {% include 'sections/brand-2.html' %}
+
+        <!--Start Feature Area  -->
+        <div class="rbt-feature-area rainbow-section-gapBottom">
+            <div class="container">
+
+                <!-- Start Feature Top  -->
+                <div class="row mb--40">
+                    <div class="col-lg-12">
+                        <div class="section-title max-width-800 text-left">
+                            <h4 class="theme-gradient">
+                            {% if g.language == "es" %}
+                            ¿De que se trata esta guía?
+                            {% else %}
+                            What to Expect  
+                            {% endif %}
+                            </h4>
+                            <h2 class="title w-600 mb--20">
+                            {% if g.language == "es" %}
+                            La Preparación Definitiva
+                            {% else %}
+                            The Ultimate Prep
+                            {% endif %}
+                            </h2>
+                            <p class="description b1">
+                                {% if g.language == "es" %}
+                                Las preguntas incluidas en esta guía de estudio han sido utilizadas en entrevistas por las principales empresas tecnológicas. También nos hemos asegurado de incluir una selección equilibrada, cubriendo todos los algoritmos esenciales que necesitas conocer.
+                                {% else %}
+                                The questions covered in this study guide have been used in interviews by the top tech companies. We've also ensured a balanced selection, covering all the essential algorithms you need to know.
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Feature Top  -->
+
+                <!-- Start Feature Main  -->
+                <div class="feature-main">
+                    <div class="rbt-feature-main bg-lessdark-gradient padding-top-left-50">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-between">
+                                <div class="feature-left-top">
+                                    
+
+                                    {% if g.language == "es" %}
+                                    <h3>Preguntas de Entrevista sobre Estructuras de Datos y Algoritmos Cubiertas</h3>
+                                    <p>¡La combinación perfecta de relevancia práctica y aprendizaje integral!</p>
+                                    {% else %}
+                                    <h3>Data Structure and Algorithms Interview Questions Covered</h3>
+                                    <p>The perfect blend of real-world relevance and comprehensive learning!</p>
+                                    {% endif %}
+                                </div>
+                                <div class="feature-left-bottom">
+                                    <div class="button-group">
+                                        <a class="btn-default btn-small btn-border" href="#">Array</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Stack</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Linked Lists</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Binary Tree</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Binary Search</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Graph</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Dynamic Programming</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Heap</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Trie</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Recursion</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Sorting</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Searching</a>
+                                        <a class="btn-default btn-small btn-border" href="#">Matrix</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="thumbnail">
+                                    <img src="../static/images/tab/programmer-1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Feature Main  -->
+            </div>
+        </div>
+        <!--End Feature Area  -->
+
+        <div style="margin-top:100px;"></div>        
+
+        {% include 'sections/about-1.html' %}
+
+        <div class="footer-style-3">
+            <div class="rainbow-callto-action rainbow-call-to-action style-8 content-wrapper">
+                <div class="container">
+                    <div class="row row--0 align-items-center ">
+                        <div class="col-lg-12">
+                            <div class="inner">
+                                <div class="content text-center">
+                                    {% if g.language == "es" %}
+                                    <h2 class="title" id="subscribe">¿Listo para transformar tu carrera?
+                                    </h2>
+                                    <h6 class="subtitle">Obtén la Guía de Estudio para la Entrevista de Programación Aquí</h6>
+                                    {% else %}
+                                    <h2 class="title" id="subscribe">Ready to trasnform your career?
+                                    </h2>
+                                    <h6 class="subtitle">Get the Coding Interview Study Guide Here</h6>
+                                    {% endif %}
+
+                                    
+                                    
+                                    <div class="col-md-6 offset-md-3">
+                                    <form action="/subscribe"  method="post" class="blog-search" style="margin-top:20px;">
+                                <input name="email" type="email" placeholder="{{ g.translations['email-input-message'] }}" >
+                                <input name="phone" type="text" style="display:none;" autocomplete="off">
+                                <input name="name" type="text" style="display:none;" autocomplete="off">
+                                <input type="hidden" name="language" value="{{ g.language }}">
+                                <button class="search-button">
+                                    <i class="feather-mail"></i>
+                                </button>
+                            </form>
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area copyright-style-one variation-two">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-7 col-sm-12 col-12">
+                            <div class="copyright-left">
+                                <ul class="ft-menu link-hover">
+                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a href="#">Terms And Condition</a></li>
+                                    <!-- <li><a href="contact.html">Contact Us</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4 col-md-5 mt_sm--20">
+                            <div class="copyright-center text-center">
+                                <ul class="social-icon social-default color-lessdark justify-content-center">
+                                    <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="200"><a href="https://www.facebook.com/">
+                                            <i class="feather-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="300"><a href="https://www.twitter.com">
+                                            <i class="feather-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="400"><a href="https://www.instagram.com/">
+                                            <i class="feather-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li data-sal="slide-up" data-sal-duration="400" data-sal-delay="500"><a href="https://www.linkdin.com/">
+                                            <i class="icon feather-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-12 mt_md--20 mt_sm--20">
+                            <div class="copyright-right text-center text-lg-end">
+                                <p class="copyright-text">© Copyright All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- All Scripts  -->
+    <!-- Start Top To Bottom Area  -->
+    <div class="rainbow-back-top">
+        <i class="feather-arrow-up"></i>
+    </div>
+    <!-- End Top To Bottom Area  -->
+    <!-- JS
+============================================ -->
+    <script src="{{ url_for('static', filename='js/vendor/modernizr.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/waypoint.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/feather.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/sal.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/masonry.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/imageloaded.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/magnify.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/lightbox.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/easypie.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/text-type.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.style.swicher.js') }}"></script>
+    <script src="{{ url_for('static', filename='') }}js/vendor/js.cookie.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery-one-page-nav.js') }}"></script>
+    <!-- Main JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
