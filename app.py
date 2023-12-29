@@ -122,10 +122,10 @@ def favicon(path):
 def subscribe():
     '''
       <Response [201]>
-      {"members":[{"id":"656493381b107400012a1fa1","uuid":"8fb68760-7b62-43a4-a515-03da863a6ac6","email":"luisdaniel309@gmail.com",
+      {"members":[{"id":"42523523","uuid":"r24r34-454354-2435243","email":"luis@gmail.com",
       "name":null,"note":"{'status': 'fail', 'message': 'reserved range', 'query': '127.0.0.1'}",
       "geolocation":null,"subscribed":true,"created_at":"2023-11-27T13:01:44.000Z","updated_at":"2023-11-27T13:01:44.000Z","labels":[]
-      ,"subscriptions":[],"avatar_image":"https://www.gravatar.com/avatar/2f3c2a6fa124dc0c6109b96a9b69d7a3?s=250&r=g&d=blank","comped":false,
+      ,"subscriptions":[],"avatar_image":"https://www.gravatar.com/avatar/54325grtg?s=250&r=g&d=blank","comped":false,
       "email_count":0,"email_opened_count":0,"email_open_rate":null,"status":"free","last_seen_at":null,"attribution":{"id":null,"type":null,"url":null,
       "title":null,"referrer_source":"Integration: ldf home","referrer_medium":"Admin API","referrer_url":null},"tiers":[],
       "email_suppression":{"suppressed":false,"info":null},"newsletters":[{"id":"641ff2aba664ef0031087514","name":"Luis Daniel Fonseca","description":null,"status":"active"}]}]}
@@ -236,7 +236,7 @@ def get_geolocation(ip_address):
     """
     success response:
     {
-        "query": "174.174.48.217",
+        "query": "174.165.78.217",
         "status": "success",
         "continent": "North America",
         "continentCode": "NA",
