@@ -14,8 +14,8 @@ GHOST_ADMIN_API_KEY = os.getenv('GHOST_ADMIN_API_KEY','')
 GHOST_API_KEY_ES = os.getenv('GHOST_API_KEY_ES','')
 GHOST_ADMIN_API_KEY_ES = os.getenv('GHOST_ADMIN_API_KEY_ES','')
 
-URL = "https://luis-daniel-fonseca.ghost.io/"
-URL_ES = "https://luis-daniel-fonseca-2.ghost.io/"
+URL = os.getenv('URL','')
+URL_ES = os.getenv('URL_ES','')
 
 non_language_specific_urls = ['choose-language']
 
