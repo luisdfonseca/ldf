@@ -30,6 +30,13 @@
         "project-section-title":"Start here: Tools and Resources",
         "projects": [
                 {
+                    "name":"Free Conding Interview Prep",
+                    "tag":"programming",
+                    "description":"Get 80 hand-picked programming questions to ace your next coding interview for free",
+                    "img":"../static/images/portfolio/conding-prep.png",
+                    "url":"/en/coding-interview-study-guide"
+                },
+                {
                     "name":"Pulpodcast",
                     "tag":"Professional Development",
                     "description":"A virtual coffee break in Spanish, hosted by professionals from leading companies like Apple, Intel, and P&G. Tune in to explore current trends and boost your professional development. Let's grow together!",
@@ -43,7 +50,6 @@
                     "img":"../static/images/portfolio/blog-cover-2.png",
                     "url":"https://ldf.blog/"
                 }
-
         ]
     },
     "es": {
@@ -77,6 +83,13 @@
         "project-section-title":"Empieza aquí: Herramientas y Recursos",
         "projects": [
                 {
+                    "name":"Guía para Entrevistas de Programación (Gratis)",
+                    "tag":"programming",
+                    "description":"Obtén 80 preguntas de programación cuidadosamente seleccionadas para sobresalir en tu próxima entrevista",
+                    "img":"../static/images/portfolio/conding-prep.png",
+                    "url":"/es/coding-interview-study-guide"
+                },
+                {
                     "name":"Pulpodcast",
                     "tag":"Desarrollo Profesional",
                     "description":"Un café virtual, presentado por profesionales de empresas líderes como Apple, Intel y P&G. Sintoniza para explorar las tendencias actuales y potenciar tu desarrollo profesional. ¡Crezcamos juntos!",
@@ -90,7 +103,6 @@
                     "img":"../static/images/portfolio/blog-cover-2.png",
                     "url":"https://es.ldf.blog/"
                 }
-
         ]
     }
 }
