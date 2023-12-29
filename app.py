@@ -43,7 +43,7 @@ def get_posts(language):
   # pdb.set_trace()
   posts_with_images = [post for post in response.json()["posts"] if post["feature_image"]]
     # limit to first 3 posts
-  posts_with_images = posts_with_images[:3]
+  posts_with_images = posts_with_images[:6]
 
   return posts_with_images
 
