@@ -1,5 +1,6 @@
 {
     "en": {
+        "nav-home-url": "/",
         "nav-about": "About",
         "nav-projects": "Projects",
         "nav-resources": "Resources",
@@ -46,6 +47,7 @@
         ]
     },
     "es": {
+        "nav-home-url": "/es/",
         "nav-about": "Sobre Nosotros",
         "nav-projects": "Proyectos",
         "nav-resources": "Recursos",
