@@ -128,7 +128,7 @@
                                     
 
                                     {% if g.language == "es" %}
-                                    <h3>Preguntas de Entrevista sobre Estructuras de Datos y Algoritmos Cubiertas</h3>
+                                    <h3>Estructuras de Datos y Algoritmos: Temas Cubiertos</h3>
                                     <p>¡La combinación perfecta de relevancia práctica y aprendizaje integral!</p>
                                     {% else %}
                                     <h3>Data Structure and Algorithms Interview Questions Covered</h3>
@@ -195,10 +195,12 @@
                                 <input name="phone" type="text" style="display:none;" autocomplete="off">
                                 <input name="name" type="text" style="display:none;" autocomplete="off">
                                 <input type="hidden" name="language" value="{{ g.language }}">
+                                <input type="hidden" name="source" value="ldf-coding-questions">
                                 <button class="search-button">
                                     <i class="feather-mail"></i>
                                 </button>
                             </form>
+                            <div id="message"></div>
                         </div>
                                 </div>
                             </div>
@@ -282,6 +284,30 @@
     <script src="{{ url_for('static', filename='js/vendor/jquery-one-page-nav.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('.blog-search').submit(function(event) {
+            event.preventDefault(); // Stop the form from submitting the usual way
+
+            let form = $(this);
+            $.ajax({
+                type: 'POST',
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function(data) {
+                    // This function will be called when the server sends a successful response
+                    $('#message').text(data.message).css('color', 'green');
+                },
+                error: function(data) {
+                    // This function will be called when the server sends an error response
+                    let message = (data.responseJSON && data.responseJSON.message) || 'An error occurred';
+                    $('#message').text(message).css('color', 'red');
+                }
+            });
+        });
+    });
+    </script>
 
 </body>
 
