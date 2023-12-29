@@ -159,7 +159,7 @@ def subscribe():
       if source == 'ldf-coding-questions' and not check_member_label_in_ghost(email, language, 'ldf-coding-questions'):
         # we need to update the user with the new label
         # and send email using zapier webhook
-        return jsonify({'status': 'success', 'message': success_msg}), 200
+        return jsonify({'status': 'success', 'message': 'Please check your email.'}), 200
       return jsonify({'status': 'error', 'message': 'User already exists'}), 400
 
     if 'X-Forwarded-For' in request.headers:
@@ -216,6 +216,12 @@ def subscribe():
     error_msg = translations_temp['signup-failure-message']
 
     if r.status_code == 201:  # Assuming 201 is the success status code from the API
+      if source == 'ldf-coding-questions':
+        if language == 'en':
+          success_msg = success_msg + ' Please check your email.'
+        elif language == 'es':
+          success_msg = success_msg + ' Por favor revisa tu correo electrónico.'
+
       return jsonify({'status': 'success', 'message': success_msg}), 200
     else:
       return jsonify({'status': 'error', 'message': error_msg}), 400
@@ -322,17 +328,17 @@ def member_exists_in_ghost(email, language="en"):
   return False
 
 
-def check_member_label_in_ghost(email, language, label):
+def check_member_label_in_ghost(email, language, label_name):
   '''
     'labels': [{'id': '655f10b4116a4d00012f85ca', 'name': 'United States', 'slug': 'us', 
     'created_at': '2023-11-23T08:43:32.000Z', 'updated_at': '2023-11-23T08:43:32.000Z'}]
   '''
-  response = get_ghost_member(email, language)
+  response = get_ghost_members(email, language)
 
   print(response)  
 
   for label in response['members'][0]['labels']:
-    if label == label['name']:
+    if label_name == label['name']:
       return True
 
   return False
