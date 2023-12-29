@@ -40,7 +40,7 @@
                     "name":"My Blog",
                     "tag":"tech, programming, and continuous growtht",
                     "description":"Sharing insights and comprehensive how-to guides around tech, programming, and career growth.",
-                    "img":"../static/images/portfolio/blog-cover.png",
+                    "img":"../static/images/portfolio/blog-cover-2.png",
                     "url":"https://ldf.blog/"
                 }
 
@@ -87,7 +87,7 @@
                     "name":"Mi Blog",
                     "tag":"tecnología, programación y crecimiento profesional",
                     "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
-                    "img":"../static/images/portfolio/blog-cover.png",
+                    "img":"../static/images/portfolio/blog-cover-2.png",
                     "url":"https://es.ldf.blog/"
                 }
 
