@@ -1,5 +1,6 @@
 {
     "en": {
+        "nav-home-url": "/",
         "nav-about": "About",
         "nav-projects": "Projects",
         "nav-resources": "Resources",
@@ -11,22 +12,30 @@
         "signup-success-message": "You were subscribed successfully.",
         "signup-failure-message": "Subscription failed.",
         "slider-btn":"Resources",
-        "about-title":"I'm a Software Engineer and developer of things",
+        "about-title":"I'm a Software Engineer and creator of things",
         "about-description": [
             "Hey! Thank you for visiting my site. I'm Luis 😃.",
 "About 12 years ago, I launched my first blog, sharing tech tutorials, which interested me in HTML and CSS. At that time, I had no idea that this decision would significantly shape my life.",
-"Since then, I've been privileged to work as a Software Engineer at Intel, consult for various small businesses, and embark on independent projects.",
+"Since then, I've been privileged to work as a software engineer at Intel, collaborate with a range of small companies, and develop several side projects.",
 "At Intel, I currently work as a Site Reliability Engineer, focusing on developing and maintaining distributed systems at scale.",
-"As a consultant, I've helped various small businesses, especially in web design, marketing, and automation.",
-"Please feel free to reach out! Happy to connect!"
+"As a consultant, I have guided businesses in optimizing their web design, enhancing marketing campaigns, and streamlining automation functionalities.",
+"Lastly, I've created a range of side projects in areas such as media, career development tools, remote work, and a couple of SaaS initiatives.",
+"I created this site to share what I make and learn along the way.  Happy to connect!"
         ],
         "blog-section-label":"The Blog",
         "blog-url":"https://ldf.blog/",
         "blog-section-title":"Explore Your Curiosity",
-        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, programming, and professional growth.",
+        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, programming, and professional growth",
         "project-section-label":"Resources",
         "project-section-title":"Start here: Tools and Resources",
         "projects": [
+                {
+                    "name":"Free Conding Interview Prep",
+                    "tag":"programming",
+                    "description":"Get 80 hand-picked programming questions to ace your next coding interview for free",
+                    "img":"../static/images/portfolio/conding-prep.png",
+                    "url":"/en/coding-interview-study-guide"
+                },
                 {
                     "name":"Pulpodcast",
                     "tag":"Professional Development",
@@ -38,13 +47,13 @@
                     "name":"My Blog",
                     "tag":"tech, programming, and continuous growtht",
                     "description":"Sharing insights and comprehensive how-to guides around tech, programming, and career growth.",
-                    "img":"../static/images/portfolio/blog-cover.png",
+                    "img":"../static/images/portfolio/blog-cover-2.png",
                     "url":"https://ldf.blog/"
                 }
-
         ]
     },
     "es": {
+        "nav-home-url": "/es/",
         "nav-about": "Sobre Nosotros",
         "nav-projects": "Proyectos",
         "nav-resources": "Recursos",
@@ -58,20 +67,28 @@
         "slider-btn":"Recursos",
         "about-title": "Soy Ingeniero en software y desarrollador de ideas",
         "about-description": [
-            "¡Hola! Gracias por visitar mi sitio. Soy Luisda 😃.",
+"¡Hola! Gracias por visitar mi sitio. Soy Luisda 😃.",
 "Hace unos 12 años, lancé mi primer blog, compartiendo tutoriales de tecnología, lo que me interesó en HTML y CSS. En ese momento, no tenía idea de que esta decisión moldearía significativamente mi vida.",
 "Desde entonces, he tenido el privilegio de trabajar como Ingeniero de Software en Intel, asesorar a varias pequeñas empresas e iniciar proyectos independientes.",
 "En Intel, trabajo actualmente como Site Reliability Engineer, centrándome en desarrollar y mantener sistemas distribuidos a gran escala.",
-"Como consultor, he ayudado a varias pequeñas empresas, especialmente en diseño web, marketing y automatización.",
-"¡No dudes en ponerte en contacto! ¡Encantado de conectar!"
+"Como consultor, he ayudado a empresas en la creación y optimización de sus páginas y aplicaciones web, y en hacer más eficientes sus procesos de automatización y campañas de marketing.",
+"Por último, he creado una serie de proyectos paralelos en áreas como producción de medios, herramientas para el desarrollo profesional, trabajo remoto y un par de iniciativas de SaaS.",
+"Creé este sitio para compartir lo que hago y lo que aprendo en el camino. ¡Encantado de conectar!"
         ],
         "blog-section-label":"El Blog",
         "blog-url":"https://es.ldf.blog/",
         "blog-section-title":"Explora Tu Curiosidad",
-        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
+        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional",
         "project-section-label":"Recursos",
         "project-section-title":"Empieza aquí: Herramientas y Recursos",
         "projects": [
+                {
+                    "name":"Guía para Entrevistas de Programación (Gratis)",
+                    "tag":"programming",
+                    "description":"Obtén 80 preguntas de programación cuidadosamente seleccionadas para sobresalir en tu próxima entrevista",
+                    "img":"../static/images/portfolio/conding-prep.png",
+                    "url":"/es/coding-interview-study-guide"
+                },
                 {
                     "name":"Pulpodcast",
                     "tag":"Desarrollo Profesional",
@@ -83,10 +100,9 @@
                     "name":"Mi Blog",
                     "tag":"tecnología, programación y crecimiento profesional",
                     "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
-                    "img":"../static/images/portfolio/blog-cover.png",
+                    "img":"../static/images/portfolio/blog-cover-2.png",
                     "url":"https://es.ldf.blog/"
                 }
-
         ]
     }
 }

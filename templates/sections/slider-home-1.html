@@ -8,19 +8,20 @@
                         {{ g.translations['home-slider']|safe if 'home-slider' in g.translations else 'Welcome to my site' }}
                     </h1>
                     <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-sm-12 col-md-4 col-">
-                            <span style="font-size:16px; color:white;">{{ g.translations['signup-message'] }}</span>
+                        <div class="col-md-4 col-sm-12"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-4">
                             <form action="/subscribe"  method="post" class="blog-search" style="margin-top:20px;">
                                 <input name="email" type="email" placeholder="{{ g.translations['email-input-message'] }}" >
                                 <input name="phone" type="text" style="display:none;" autocomplete="off">
                                 <input name="name" type="text" style="display:none;" autocomplete="off">
                                 <input type="hidden" name="language" value="{{ g.language }}">
+                                <input type="hidden" name="source" value="ldf-home">
                                 <button class="search-button">
                                     <i class="feather-mail"></i>
                                 </button>
                             </form>
                             <div id="message"></div>
+                            <span style="font-size:13px; color:gray;">{{ g.translations['signup-message'] }}</span>
                         </div>
                     </div>
                     <!-- <div class="button-group mt--30"><a class="btn-default round btn-border" href="#resources">{{ g.translations['slider-btn'] }}</a></div> -->
