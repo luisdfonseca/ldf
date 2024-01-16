@@ -30,8 +30,15 @@
         "project-section-title":"Start here: Tools and Resources",
         "projects": [
                 {
+                    "name":"Tech Behavioral Interview Coach",
+                    "tag":"jobs,jobs",
+                    "description":"Custom GPT that prepares you for the behavioral tech interview based on the user's target role and company, offering STAR model feedback.",
+                    "img":"../static/images/portfolio/gpt-behavioral1.png",
+                    "url":"https://chat.openai.com/g/g-oMc6Li5sJ-tech-behavioral-interview-coach?ref=luisdanielfonseca.com"
+                },
+                {
                     "name":"Free Conding Interview Prep",
-                    "tag":"programming",
+                    "tag":"programming,jobs",
                     "description":"Get 80 hand-picked programming questions to ace your next coding interview for free",
                     "img":"../static/images/portfolio/conding-prep.png",
                     "url":"/en/coding-interview-study-guide"
@@ -82,6 +89,13 @@
         "project-section-label":"Recursos",
         "project-section-title":"Empieza aquí: Herramientas y Recursos",
         "projects": [
+                {
+                    "name":"Entrenador para Entrevistas de Comportamiento en Tecnología",
+                    "tag":"programming",
+                    "description":"GPT personalizado que te prepara para la entrevista de comportamiento técnico basada en el rol objetivo y la empresa del usuario, ofreciendo retroalimentación con el modelo STAR.",
+                    "img":"../static/images/portfolio/gpt-behavioral1.png",
+                    "url":"https://chat.openai.com/g/g-oMc6Li5sJ-tech-behavioral-interview-coach?ref=luisdanielfonseca.com"
+                },
                 {
                     "name":"Guía para Entrevistas de Programación (Gratis)",
                     "tag":"programming",
