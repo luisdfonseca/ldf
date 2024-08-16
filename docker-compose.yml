@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: ldf_app
+    ports:
+      - "8000:8000"
+    #volumes:
+      #- ./instance:/app/instance
+    env_file:
+      - .env
+    restart: always
+

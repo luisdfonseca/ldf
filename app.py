@@ -7,7 +7,8 @@ load_dotenv()
 
 
 app= Flask(__name__)
-
+app.config['ENV'] = os.getenv('FLASK_ENV')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 GHOST_API_KEY = os.getenv('GHOST_API_KEY','')
 GHOST_ADMIN_API_KEY = os.getenv('GHOST_ADMIN_API_KEY','')
 
