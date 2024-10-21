@@ -23,7 +23,7 @@
 "I created this site to share what I make and learn along the way.  Happy to connect!"
         ],
         "blog-section-label":"The Blog",
-        "blog-url":"https://ldf.blog/",
+        "blog-url":"https://blog.luisdanielfonseca.com/",
         "blog-section-title":"Explore Your Curiosity",
         "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, programming, and professional growth",
         "project-section-label":"Resources",
@@ -55,7 +55,7 @@
                     "tag":"tech, programming, and continuous growtht",
                     "description":"Sharing insights and comprehensive how-to guides around tech, programming, and career growth.",
                     "img":"../static/images/portfolio/blog-cover-2.png",
-                    "url":"https://ldf.blog/"
+                    "url":"https://blog.luisdanielfonseca.com"
                 }
         ]
     },
@@ -83,7 +83,7 @@
 "Creé este sitio para compartir lo que hago y lo que aprendo en el camino. ¡Encantado de conectar!"
         ],
         "blog-section-label":"El Blog",
-        "blog-url":"https://es.ldf.blog/",
+        "blog-url":"https://blog.luisdanielfonseca.com/",
         "blog-section-title":"Explora Tu Curiosidad",
         "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional",
         "project-section-label":"Recursos",
@@ -115,7 +115,7 @@
                     "tag":"tecnología, programación y crecimiento profesional",
                     "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
                     "img":"../static/images/portfolio/blog-cover-2.png",
-                    "url":"https://es.ldf.blog/"
+                    "url":"https://blog.luisdanielfonseca.com/"
                 }
         ]
     }
