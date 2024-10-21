@@ -6,13 +6,13 @@
         "nav-resources": "Resources",
         "nav-language":"Español",
         "nav-language-url":"/es/",
-        "home-slider": "Hey! I'm <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "home-slider": "<small style='font-size:4rem;color:#acacac;'>Hey! I'm</small> <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
         "email-input-message":"Your Email",
-        "signup-message": "Stay Ahead: Weekly Insights and Guides on Tech, Programming, and Career Growth.",
+        "signup-message": "Suscribe to a blog dedicated to tech, business, career and continuous growth",
         "signup-success-message": "You were subscribed successfully.",
         "signup-failure-message": "Subscription failed.",
         "slider-btn":"Resources",
-        "about-title":"I'm a Software Engineer and creator of things",
+        "about-title":"I'm a Software Engineer, maker and writer",
         "about-description": [
             "Hey! Thank you for visiting my site. I'm Luis 😃.",
 "About 12 years ago, I launched my first blog, sharing tech tutorials, which interested me in HTML and CSS. At that time, I had no idea that this decision would significantly shape my life.",
@@ -25,7 +25,7 @@
         "blog-section-label":"The Blog",
         "blog-url":"https://blog.luisdanielfonseca.com/",
         "blog-section-title":"Explore Your Curiosity",
-        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides around tech, programming, and professional growth",
+        "blog-section-description":"Sharing insights, ideas, notes and comprehensive how-to guides",
         "project-section-label":"Resources",
         "project-section-title":"Start here: Tools and Resources",
         "projects": [
@@ -42,20 +42,6 @@
                     "description":"Get 80 hand-picked programming questions to ace your next coding interview for free",
                     "img":"../static/images/portfolio/conding-prep.png",
                     "url":"/en/coding-interview-study-guide"
-                },
-                {
-                    "name":"Pulpodcast",
-                    "tag":"Professional Development",
-                    "description":"A virtual coffee break in Spanish, hosted by professionals from leading companies like Apple, Intel, and P&G. Tune in to explore current trends and boost your professional development. Let's grow together!",
-                    "img":"../static/images/portfolio/pulpodcast.png",
-                    "url":"https://pulpodcast.transistor.fm/"
-                },
-                {
-                    "name":"My Blog",
-                    "tag":"tech, programming, and continuous growtht",
-                    "description":"Sharing insights and comprehensive how-to guides around tech, programming, and career growth.",
-                    "img":"../static/images/portfolio/blog-cover-2.png",
-                    "url":"https://blog.luisdanielfonseca.com"
                 }
         ]
     },
@@ -66,9 +52,9 @@
         "nav-resources": "Recursos",
         "nav-language":"English",
         "nav-language-url":"/",
-        "home-slider": "¡Hola! Soy <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
+        "home-slider": "<small style='font-size:4rem;color:#acacac;'>¡Hola! Soy</small> <br> <span class='theme-gradient'>Luis Daniel Fonseca</span>",
         "email-input-message":"Tu Email",
-        "signup-message": "Mantente Actualizado: Artículos Semanales y Guías sobre Tecnología, Programación y Crecimiento Profesional.",
+        "signup-message": "Suscríbete a un blog dedicado a tech, startups, crecimiento profesional y personal",
         "signup-success-message": "Te has suscrito exitosamente.",
         "signup-failure-message": "La suscripción falló.",
         "slider-btn":"Recursos",
@@ -85,7 +71,7 @@
         "blog-section-label":"El Blog",
         "blog-url":"https://blog.luisdanielfonseca.com/",
         "blog-section-title":"Explora Tu Curiosidad",
-        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional",
+        "blog-section-description":"Compartimos perspectivas, ideas, notas y guías detalladas",
         "project-section-label":"Recursos",
         "project-section-title":"Empieza aquí: Herramientas y Recursos",
         "projects": [
@@ -102,20 +88,6 @@
                     "description":"Obtén 80 preguntas de programación cuidadosamente seleccionadas para sobresalir en tu próxima entrevista",
                     "img":"../static/images/portfolio/conding-prep.png",
                     "url":"/es/coding-interview-study-guide"
-                },
-                {
-                    "name":"Pulpodcast",
-                    "tag":"Desarrollo Profesional",
-                    "description":"Un café virtual, presentado por profesionales de empresas líderes como Apple, Intel y P&G. Sintoniza para explorar las tendencias actuales y potenciar tu desarrollo profesional. ¡Crezcamos juntos!",
-                    "img":"../static/images/portfolio/pulpodcast.png",
-                    "url":"https://pulpodcast.transistor.fm/"
-                },
-                {
-                    "name":"Mi Blog",
-                    "tag":"tecnología, programación y crecimiento profesional",
-                    "description":"Compartimos perspectivas, ideas, notas y guías detalladas sobre tecnología, programación y crecimiento profesional.",
-                    "img":"../static/images/portfolio/blog-cover-2.png",
-                    "url":"https://blog.luisdanielfonseca.com/"
                 }
         ]
     }
