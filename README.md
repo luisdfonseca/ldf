@@ -34,6 +34,13 @@ flask run
 flask run --port 8080
 ```
 
+## Deployment
+
+```
+sudo docker compose build
+sudo docker compose down
+sudo docker compose up -d
+```
 
 
 ## Index
