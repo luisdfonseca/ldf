@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  ghost:
+    image: ghost:latest
+    container_name: ldf_es_ghost
+    restart: always
+    ports:
+      - "2368:2368"
+    environment:
+      url: https://blog.luisdanielfonseca.com
+      database__client: sqlite3
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+      mail__transport: SMTP
+      mail__options__host: smtp.mailgun.org
+      mail__options__port: 465  # Use 465 for SSL
+      mail__options__secure: true  # This ensures SSL is used
+      mail__options__auth__user: blog@mg.luisdanielfonseca.com
+      mail__options__auth__pass:  password
+      mail__from: 'Luis Daniel Fonseca Blog  <luis@luisdanielfonseca.com>'
+    volumes:
+      - /home/ldfonsec/projects/ghost_ldf_es:/var/lib/ghost/content
