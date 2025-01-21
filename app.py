@@ -1,5 +1,5 @@
 import json, os, requests, pdb, jwt
-from flask import Flask, render_template, g, request, send_from_directory, jsonify
+from flask import Flask, render_template, g, request, send_from_directory, jsonify, redirect, url_for
 from datetime import datetime as date
 
 from dotenv import load_dotenv
@@ -23,6 +23,29 @@ non_language_specific_urls = ['choose-language']
 # # Load translations
 with open('translations.json') as json_file:
     translations = json.load(json_file)
+
+LEAD_G = ["ldf-coding-questions"]
+
+EMAIL_TEMPLATES = {
+    "ldf-coding-questions": {
+        "subject_en": "Welcome to the Coding Interview Guide!",
+        "subject_es": "¡Bienvenido a la Guía de Entrevistas de Programación!",
+        "message_en": (
+            "Thank you for subscribing to our coding interview guide! "
+            "We hope it helps you ace your next interview."
+        ),
+        "message_es": (
+            "¡Gracias por suscribirte a nuestra guía de entrevistas de programación! "
+            "Esperamos que te ayude a destacar en tu próxima entrevista."
+        ),
+    },
+    "default": {
+        "subject_en": "Welcome to our community!",
+        "subject_es": "¡Bienvenido a nuestra comunidad!",
+        "message_en": "Thank you for subscribing! We're excited to have you on board.",
+        "message_es": "¡Gracias por suscribirte! Estamos emocionados de tenerte con nosotros.",
+    },
+}
 
 def get_posts(language):
   headers = {
@@ -69,8 +92,10 @@ def index(language):
   #       abort(404)
 
   posts = get_posts(language)
+  status = request.args.get('status')
+  message = request.args.get('message')
 
-  return render_template('index.html', posts=posts)
+  return render_template('index.html', posts=posts, status=status, message=message)
 
 @app.route("/choose-language", methods=['GET'])
 def lan():
@@ -119,8 +144,6 @@ def favicon(path):
 
 #   return prepare_response(response, language)
 
-@app.route('/subscribe', methods=['POST'])
-def subscribe():
     '''
       <Response [201]>
       {"members":[{"id":"42523523","uuid":"r24r34-454354-2435243","email":"luis@gmail.com",
@@ -137,95 +160,6 @@ def subscribe():
       "code":null,"id":"3a446010-8d25-11ee-b121-e1b0984af7d1","ghostErrorCode":null}]}
 
     '''
-    language = request.form.get('language', 'en')
-
-    phone = request.form.get('phone')
-    name = request.form.get('name')
-    if name or phone:
-        # This submission is likely a spam bot
-        return "Thanks", 200
-
-    site_url = URL
-    admin_key = GHOST_ADMIN_API_KEY
-
-    if language == 'es':
-      site_url = URL_ES
-      admin_key = GHOST_ADMIN_API_KEY_ES
-
-    # Get email from form
-    email = request.form['email']
-    source = request.form['source']
-
-    if member_exists_in_ghost(email, language):
-      if source == 'ldf-coding-questions' and not check_member_label_in_ghost(email, language, 'ldf-coding-questions'):
-        # we need to update the user with the new label
-        # and send email using zapier webhook
-        return jsonify({'status': 'success', 'message': 'Please check your email.'}), 200
-      return jsonify({'status': 'error', 'message': 'User already exists'}), 400
-
-    if 'X-Forwarded-For' in request.headers:
-      ip_address = request.headers['X-Forwarded-For']
-    else:
-      ip_address = request.remote_addr
-
-    geolocation_data = get_geolocation(ip_address)
-
-    print(ip_address)
-    print(geolocation_data)
-
-    # Split the key into ID and SECRET
-    id, secret = admin_key.split(':')
-    print(id)
-    # print(secret)
-    # print(email)
-
-    # Prepare header and payload
-    iat = int(date.now().timestamp())
-
-    header = {'alg': 'HS256', 'typ': 'JWT', 'kid': id}
-    payload = {
-        'iat': iat,
-        'exp': iat + 5 * 60,
-        'aud': '/admin/'
-    }
-
-    # Create the token (including decoding secret)
-    token = jwt.encode(payload, bytes.fromhex(secret), algorithm='HS256', headers=header)
-
-    # Make an authenticated request to create a post
-    url = '%s/ghost/api/admin/members/' % site_url
-    print(url)
-    headers = {'Authorization': 'Ghost {}'.format(token)}
-    body = {"members": [{"email": email, 'note': str(geolocation_data)}]}
-
-    body["members"][0]["labels"] = []
-
-    if geolocation_data["status"] == 'success':
-      body["members"][0]["labels"].append({"name": geolocation_data["country"],"slug": geolocation_data["countryCode"]})
-
-    if source:
-      body["members"][0]["labels"].append({"name": source, "slug": source})
-
-    r = requests.post(url, json=body, headers=headers)
-
-    print(r)
-    print(r.text)
-
-    translations_temp = translations.get(language, {})
-
-    success_msg = translations_temp['signup-success-message']
-    error_msg = translations_temp['signup-failure-message']
-
-    if r.status_code == 201:  # Assuming 201 is the success status code from the API
-      if source == 'ldf-coding-questions':
-        if language == 'en':
-          success_msg = success_msg + ' Please check your email.'
-        elif language == 'es':
-          success_msg = success_msg + ' Por favor revisa tu correo electrónico.'
-
-      return jsonify({'status': 'success', 'message': success_msg}), 200
-    else:
-      return jsonify({'status': 'error', 'message': error_msg}), 400
 
 def get_site_info(language):
     if language == 'es':
@@ -329,20 +263,69 @@ def member_exists_in_ghost(email, language="en"):
   return False
 
 
-def check_member_label_in_ghost(email, language, label_name):
-  '''
-    'labels': [{'id': '655f10b4116a4d00012f85ca', 'name': 'United States', 'slug': 'us', 
-    'created_at': '2023-11-23T08:43:32.000Z', 'updated_at': '2023-11-23T08:43:32.000Z'}]
-  '''
-  response = get_ghost_members(email, language)
 
-  print(response)  
 
-  for label in response['members'][0]['labels']:
-    if label_name == label['name']:
-      return True
+def check_member_label_in_ghost(email, language, label_name, add_label_if_missing=False):
+    """
+    Check if a label exists for a Ghost member, and optionally add it if it does not exist.
+    
+    :param email: Email of the member
+    :param language: Language preference (e.g., 'en' or 'es')
+    :param label_name: Name of the label to check
+    :param add_label_if_missing: Boolean flag to add the label if it doesn't exist
+    :return: True if the label exists (or is successfully added), False otherwise
+    """
+    response = get_ghost_members(email, language)
 
-  return False
+    if not response['members']:
+        return False  # Member not found
+
+    member = response['members'][0]
+    member_id = member['id']
+    labels = member.get('labels', [])
+
+    # Check if the label already exists
+    if any(label['name'] == label_name for label in labels):
+        return True
+
+    # Add the label if it doesn't exist and `add_label_if_missing` is True
+    if add_label_if_missing:
+        site_url = URL
+        admin_key = GHOST_ADMIN_API_KEY
+        id, secret = admin_key.split(':')
+        iat = int(date.now().timestamp())
+        token = jwt.encode(
+            {'iat': iat, 'exp': iat + 5 * 60, 'aud': '/admin/'},
+            bytes.fromhex(secret),
+            algorithm='HS256',
+            headers={'alg': 'HS256', 'typ': 'JWT', 'kid': id},
+        )
+
+        # Add the label to the member
+        url = f"{site_url}/ghost/api/admin/members/{member_id}/"
+        headers = {'Authorization': f'Ghost {token}'}
+
+        # Wrap the labels in the required `members` key
+        payload = {
+            "members": [
+                {
+                    "labels": labels + [{"name": label_name, "slug": label_name.lower().replace(" ", "-")}]
+                }
+            ]
+        }
+
+        response = requests.put(url, json=payload, headers=headers)
+
+        # Debugging logs
+        print("CHECK LABEL RESPONSE")
+        print(f"Status Code: {response.status_code}")
+        print(f"Response Text: {response.text}")
+
+        return response.status_code == 200
+
+    return False
+
+
 
 
 def get_ghost_members(email=None, language="en"):
@@ -386,5 +369,147 @@ def get_ghost_members(email=None, language="en"):
   headers = {'Authorization': 'Ghost {}'.format(token)}
 
   r = requests.get(url, headers=headers, params={'include':'tags'})
-
+  
   return(r.json())
+
+
+
+def send_welcome_email(email, source="default", language="en"):
+    mailgun_domain = os.getenv("MAILGUN_DOMAIN")
+    mailgun_api_key = os.getenv("MAILGUN_API_KEY")
+    if not mailgun_domain or not mailgun_api_key:
+        print("Mailgun configuration is missing!")
+        return False
+
+    # Get templates based on source
+    templates = EMAIL_TEMPLATES.get(source, EMAIL_TEMPLATES["default"])
+    subject = templates.get(f"subject_{language}", templates["subject_en"])
+    message = templates.get(f"message_{language}", templates["message_en"])
+
+    url = f"https://api.mailgun.net/v3/{mailgun_domain}/messages"
+    data = {
+        "from": f"Your App Name <no-reply@{mailgun_domain}>",
+        "to": email,
+        "subject": subject,
+        "text": message,
+    }
+
+    response = requests.post(
+        url,
+        auth=("api", mailgun_api_key),
+        data=data
+    )
+
+    if response.status_code == 200:
+        print(f"Welcome email sent to {email} for source '{source}'.")
+        return True
+    else:
+        print(f"Failed to send email: {response.status_code} - {response.text}")
+        return False
+
+
+def create_ghost_member(email, source, language, geolocation_data):
+    """
+    Create a member in Ghost using the Admin API.
+    """
+    id, secret = GHOST_ADMIN_API_KEY.split(':')
+    iat = int(date.now().timestamp())
+    token = jwt.encode(
+        {'iat': iat, 'exp': iat + 5 * 60, 'aud': '/admin/'},
+        bytes.fromhex(secret),
+        algorithm='HS256',
+        headers={'alg': 'HS256', 'typ': 'JWT', 'kid': id},
+    )
+    url = f"{URL}/ghost/api/admin/members/"
+    headers = {'Authorization': f'Ghost {token}'}
+    body = {
+        "members": [
+            {
+                "email": email,
+                "note": str(geolocation_data),
+                "labels": [{"name": source, "slug": source}],
+            }
+        ]
+    }
+    if geolocation_data.get("status") == 'success':
+        body["members"][0]["labels"].append(
+            {"name": geolocation_data["country"], "slug": geolocation_data["countryCode"]}
+        )
+
+    response = requests.post(url, json=body, headers=headers)
+
+    print(response.text)
+    return response
+
+
+def process_subscription(email, source, language):
+    """
+    Handle the subscription process, including creating the member and sending the email.
+    """
+    if member_exists_in_ghost(email, language):
+        if source in LEAD_G:
+            check_member_label_in_ghost(email, language, source, add_label_if_missing=True)
+            send_welcome_email(email, source, language)
+            return {'status': 'success', 'message': 'Please check your email.'}
+
+    geolocation_data = get_geolocation(request.headers.get('X-Forwarded-For', request.remote_addr))
+    response = create_ghost_member(email, source, language, geolocation_data)
+
+    if response.status_code == 201:
+        send_welcome_email(email, source, language)
+        return {'status': 'success', 'message': 'Subscription successful.'}
+    return {'status': 'error', 'message': 'Failed to create subscription.'}
+
+@app.route('/subscribe', methods=['POST'])
+def subscribe_with_message():
+    email = request.form.get('email')
+    source = request.form.get('source')
+    language = request.form.get('language', 'en')
+
+    # Validate spam bots
+    if request.form.get('phone') or request.form.get('name'):
+        return jsonify({'status': 'error', 'message': 'Spam submission detected'}), 400
+
+    result = process_subscription(email, source, language)
+    return jsonify(result), 200 if result['status'] == 'success' else 400
+
+
+
+@app.route('/subscribe-and-redirect', methods=['POST'])
+def subscribe_and_redirect():
+    email = request.form.get('email')
+    source = request.form.get('source')
+    language = request.form.get('language', 'en')
+
+    # Get the redirect URL from the form
+    redirect_url = request.form.get('redirect_url')
+    if not redirect_url:
+        print("No redirect URL provided. Defaulting to /")
+        redirect_url = '/'
+
+    # Debugging: Log the received redirect URL
+    print(f"Received redirect URL: {redirect_url}")
+
+    # Validate spam bots
+    if request.form.get('phone') or request.form.get('name'):
+        return redirect(f"{redirect_url}?status=error&message=spam")
+
+    # Process the subscription
+    result = process_subscription(email, source, language)
+
+    # Debugging: Log the subscription result
+    print(f"Subscription result: {result}")
+
+    # Ensure the redirect URL is clean and append status query params
+    redirect_url = redirect_url.rstrip('/') 
+    return redirect(f"{redirect_url}?status={result['status']}&message={result['message']}")
+
+
+@app.route('/subscribe-and-redirect', methods=['GET'])
+def sus_red():
+    # Extract current query parameters
+    status = request.args.get('status')
+    message = request.args.get('message')
+
+    # Redirect to the homepage with the same query parameters
+    return redirect(url_for("index", status=status, message=message))

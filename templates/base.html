@@ -34,8 +34,39 @@
       gtag('config', 'G-629HN5HCR4');
     </script>
 
+
+    <style>
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
 </head>
 <body>
+
+        {% if status == 'success' %}
+    <div class="alert alert-success">
+        <strong>Success!</strong> {{ message if message else ' Your subscription was successful.'}}
+    </div>
+    {% elif status == 'error' %}
+    <div class="alert alert-error">
+        <strong>Error:</strong> {{ message if message else 'Something went wrong. Please try again.' }}
+    </div>
+    {% endif %}
+
     <main class="page-wrapper">
         {% include 'shared/navbar.html' %}
         {% block content %}{% endblock %}
