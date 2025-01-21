@@ -39,6 +39,12 @@ EMAIL_TEMPLATES = {
             "Esperamos que te ayude a destacar en tu próxima entrevista."
         ),
     },
+    "ldf-home": {
+        "subject_en": "Welcome to our community!",
+        "subject_es": "¡Bienvenido a nuestra comunidad!",
+        "message_en": "Thank you for subscribing! We're excited to have you on board.",
+        "message_es": "¡Gracias por suscribirte! Estamos emocionados de tenerte con nosotros.",
+    },
     "default": {
         "subject_en": "Welcome to our community!",
         "subject_es": "¡Bienvenido a nuestra comunidad!",
