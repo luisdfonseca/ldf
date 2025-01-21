@@ -455,7 +455,7 @@ def process_subscription(email, source, language):
     geolocation_data = get_geolocation(request.headers.get('X-Forwarded-For', request.remote_addr))
     response = create_ghost_member(email, source, language, geolocation_data)
 
-    if response.status_code == 201:
+    if response.status_code in [200,201]:
         send_welcome_email(email, source, language)
         return {'status': 'success', 'message': 'Subscription successful.'}
     return {'status': 'error', 'message': 'Failed to create subscription.'}
