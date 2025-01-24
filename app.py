@@ -39,6 +39,30 @@ EMAIL_TEMPLATES = {
             "Esperamos que te ayude a destacar en tu próxima entrevista."
         ),
     },
+    "ldf-behavioral-gpt": {
+        "subject_en": "Welcome to the Coding Interview Guide!",
+        "subject_es": "¡Bienvenido a la Guía de Entrevistas de Programación!",
+        "message_en": (
+            "Thank you for subscribing to our coding interview guide! "
+            "We hope it helps you ace your next interview."
+        ),
+        "message_es": (
+            "¡Gracias por suscribirte a nuestra guía de entrevistas de programación! "
+            "Esperamos que te ayude a destacar en tu próxima entrevista."
+        ),
+    },
+     "ldf-okrs-template": {
+        "subject_en": "Welcome to the Coding Interview Guide!",
+        "subject_es": "¡Bienvenido a la Guía de Entrevistas de Programación!",
+        "message_en": (
+            "Thank you for subscribing to our coding interview guide! "
+            "We hope it helps you ace your next interview."
+        ),
+        "message_es": (
+            "¡Gracias por suscribirte a nuestra guía de entrevistas de programación! "
+            "Esperamos que te ayude a destacar en tu próxima entrevista."
+        ),
+    },
     "ldf-home": {
         "subject_en": "Welcome to our community!",
         "subject_es": "¡Bienvenido a nuestra comunidad!",
